@@ -1,0 +1,23 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Database\Eloquent\Model;
+{{useSoftDeletes}}
+class DummyClass extends Model
+{
+    {{softDeletes}}
+
+    protected $table = '{{table}}';
+
+    {{primaryKey}}
+
+    protected $fillable = {{fillable}};
+
+    {{relationships}}
+
+    public function getDescriptionForEvent($eventName)
+    {
+        return __CLASS__ . " model has been {$eventName}";
+    }
+}
