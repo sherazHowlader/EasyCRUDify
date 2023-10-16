@@ -1,0 +1,31 @@
+{
+    "name": "easy/crudify",
+    "license": "MIT",
+    "description": "Laravel Easy CRUD",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Md Sheraz Howlader",
+            "email": "mdsherazhowlader@gmail.com",
+            "homepage": "https://github.com/sherazhowlader"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0 || ^9.0 || ^10.0",
+        "laravelcollective/html": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravel\\EasyCRUD\\": "src/"
+        },
+        "files": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravel\\EasyCRUD\\EasyCRUDServiceProvider"
+            ]
+        }
+    }
+}
