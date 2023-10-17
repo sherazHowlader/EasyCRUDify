@@ -74,13 +74,8 @@ class CrudModelCommand extends GeneratorCommand
         $softDeletes = $this->option('soft-deletes');
 
         if (!empty($primaryKey)) {
-            $primaryKey = <<<EOD
-/**
-    * The database primary key value.
-    *
-    * @var string
-    */
-    protected \$primaryKey = '$primaryKey';
+$primaryKey = <<<EOD
+protected \$primaryKey = '$primaryKey';
 EOD;
         }
 

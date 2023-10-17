@@ -9,8 +9,6 @@
 
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
-
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -43,7 +41,7 @@
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://kit.fontawesome.com/6cb789f970.js" crossorigin="anonymous"></script>
 @yield('scripts')
 </body>
 </html>

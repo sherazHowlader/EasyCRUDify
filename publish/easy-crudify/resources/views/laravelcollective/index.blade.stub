@@ -8,29 +8,35 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">%%crudNameCap%%</div>
-                    <div class="card-body">
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm" title="Add New %%modelName%%">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-
-                        {!! Form::open(['method' => 'GET', 'url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                            <span class="input-group-append">
-                                <button class="btn btn-secondary" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                    <div class="card-body row">
+                        <div class="col-md-2">
+                            <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm" title="Add New %%modelName%%">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                            </a>
                         </div>
-                        {!! Form::close() !!}
+
+                        <div class="offset-7 col-md-3">
+                            {!! Form::open(['method' => 'GET', 'url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                <span class="input-group-append">
+                                    <button class="btn btn-secondary btn-sm" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
 
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>#</th>%%formHeadingHtml%%<th>Actions</th>
+                                        <th>#</th>
+                                        %%formHeadingHtml%%
+                                        <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -38,7 +44,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration or $item->%%primaryKey%% }}</td>
                                         %%formBodyHtml%%
-                                        <td>
+                                        <td class="text-center">
                                             <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}" title="View %%modelName%%"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" title="Edit %%modelName%%"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                             {!! Form::open([

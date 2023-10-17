@@ -1,5 +1,5 @@
 %%formFieldsHtml%%
 
-<div class="form-group">
+<div class="form-group my-4">
     {!! Form::submit($formMode === 'edit' ? 'Update' : 'Create', ['class' => 'btn btn-primary']) !!}
 </div>

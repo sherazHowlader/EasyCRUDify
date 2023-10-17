@@ -157,7 +157,12 @@ EOD;
 
                 $fieldName = trim($itemArray[0]);
 
-                $whereSnippet .= ($index == 0) ? "where('$fieldName', 'LIKE', \"%\$keyword%\")" . "\n                " : "->orWhere('$fieldName', 'LIKE', \"%\$keyword%\")" . "\n                ";
+                $whereSnippet .= ($index == 0) ?
+                    "query()" . "\n            " .
+                    "->where('$fieldName', 'LIKE', \"%\$keyword%\")" . "\n            " :
+                    "->when(isset(\$keyword), function (\$query) use (\$keyword) {" . "\n            " .
+                    "   \$query->orWhere('$fieldName', 'LIKE', \"%\$keyword%\");" . "\n            " .
+                    "})" . "\n            ";
             }
 
             $whereSnippet .= "->";
