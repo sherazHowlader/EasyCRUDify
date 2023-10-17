@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'path' => base_path('resources/easy-crud/'),
+    'path' => base_path('resources/views/easy-crudify/resources/'),
 
     /**
      * Columns number to show in view's table.

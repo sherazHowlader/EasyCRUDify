@@ -1,9 +1,9 @@
-@extends('easy-crud.app')
+@extends('easy-crudify.generator.app')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @include('easy-crud.sidebar')
+            @include('easy-crudify.generator.sidebar')
 
             <div class="col-md-9">
                 <div class="card">

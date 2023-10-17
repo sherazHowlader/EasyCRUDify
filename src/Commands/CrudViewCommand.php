@@ -247,13 +247,13 @@ class CrudViewCommand extends Command
     {
         parent::__construct();
 
-        if (config('easy-crud.view_columns_number')) {
+        if (config('easy-crudify.view_columns_number')) {
             $this
-                ->defaultColumnsToShow = config('easy-crud.view_columns_number');
+                ->defaultColumnsToShow = config('easy-crudify.view_columns_number');
         }
 
-        $this->delimiter = config('easy-crud.custom_delimiter')
-            ? config('easy-crud.custom_delimiter')
+        $this->delimiter = config('easy-crudify.custom_delimiter')
+            ? config('easy-crudify.custom_delimiter')
             : ['%%', '%%'];
     }
 
@@ -265,8 +265,8 @@ class CrudViewCommand extends Command
     public function handle()
     {
         $formHelper = $this->option('form-helper');
-        $this->viewDirectoryPath = config('easy-crud.custom_template')
-            ? config('easy-crud.path') . 'views/' . $formHelper . '/'
+        $this->viewDirectoryPath = config('easy-crudify.custom_template')
+            ? config('easy-crudify.path') . 'views/' . $formHelper . '/'
             : __DIR__ . '/../stubs/views/' . $formHelper . '/';
 
 
@@ -381,8 +381,8 @@ class CrudViewCommand extends Command
      */
     protected function templateStubs($path)
     {
-        $dynamicViewTemplate = config('easy-crud.dynamic_view_template')
-            ? config('easy-crud.dynamic_view_template')
+        $dynamicViewTemplate = config('easy-crudify.dynamic_view_template')
+            ? config('easy-crudify.dynamic_view_template')
             : $this->defaultTemplating();
 
         foreach ($dynamicViewTemplate as $name => $vars) {

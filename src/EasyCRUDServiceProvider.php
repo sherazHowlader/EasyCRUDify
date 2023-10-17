@@ -13,18 +13,18 @@ class EasyCRUDServiceProvider extends ServiceProvider
     public function boot(Router $router): void
     {
         $this->publishes([
-            __DIR__ . '/../publish/resources/' => base_path('resources'),
+            __DIR__ . '/../publish/easy-crudify/' => base_path('resources/views/easy-crudify'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/config/easy-crud.php' => config_path('easy-crud.php'),
+            __DIR__ . '/../publish/config/easy-crudify.php' => config_path('easy-crudify.php'),
         ]);
 
-        $this->loadViewsFrom(__DIR__ . '/views', 'easy-crud');
+        $this->loadViewsFrom(__DIR__ . '/views', 'easy-crudify.generator');
 
         $menus = [];
-        if (File::exists(base_path('resources/easy-crud/menus.json'))) {
-            $menus = json_decode(File::get(base_path('resources/easy-crud/menus.json')));
+        if (File::exists(base_path('resources/views/easy-crudify/resources/menus.json'))) {
+            $menus = json_decode(File::get(base_path('resources/views/easy-crudify/resources/menus.json')));
             view()->share('EasyCRUDifyMenus', $menus);
         }
     }

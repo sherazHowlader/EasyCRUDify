@@ -46,8 +46,8 @@ class CrudControllerCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return config('easy-crud.custom_template')
-        ? config('easy-crud.path') . '/controller.stub'
+        return config('easy-crudify.custom_template')
+        ? config('easy-crudify.path') . '/controller.stub'
         : __DIR__ . '/../stubs/controller.stub';
     }
 

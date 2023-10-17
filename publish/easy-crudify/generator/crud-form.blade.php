@@ -1,9 +1,9 @@
-@extends('easy-crud.app')
+@extends('easy-crudify.generator.app')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @include('easy-crud.sidebar')
+            @include('easy-crudify.generator.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
@@ -16,26 +16,31 @@
                             <div class="form-group row my-2">
                                 <label for="crud_name" class="col-md-4 col-form-label text-right">Crud Name:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="crud_name" class="form-control" id="crud_name" placeholder="Posts" required="required">
+                                    <input type="text" name="crud_name" class="form-control" id="crud_name"
+                                           placeholder="Posts" required="required">
                                 </div>
                             </div>
                             <div class="form-group row my-2">
                                 <label for="controller_namespace" class="col-md-4 col-form-label text-right">Controller
                                     Namespace:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="controller_namespace" class="form-control" id="controller_namespace" placeholder="Admin">
+                                    <input type="text" name="controller_namespace" class="form-control"
+                                           id="controller_namespace" placeholder="Admin">
                                 </div>
                             </div>
                             <div class="form-group row my-2">
-                                <label for="route_group" class="col-md-4 col-form-label text-right">Route Group Prefix:</label>
+                                <label for="route_group" class="col-md-4 col-form-label text-right">Route Group
+                                    Prefix:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="route_group" class="form-control" id="route_group" placeholder="admin">
+                                    <input type="text" name="route_group" class="form-control" id="route_group"
+                                           placeholder="admin">
                                 </div>
                             </div>
                             <div class="form-group row my-2">
                                 <label for="view_path" class="col-md-4 col-form-label text-right">View Path:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="view_path" class="form-control" id="view_path" placeholder="admin">
+                                    <input type="text" name="view_path" class="form-control" id="view_path"
+                                           placeholder="admin">
                                 </div>
                             </div>
                             <div class="form-group row my-2">
@@ -82,7 +87,8 @@
                                     <div class="row">
                                         <div class="col-md-3 offset-1">
                                             <div class="input-group mb-3">
-                                                <input type="text" name="fields[]" class="form-control" placeholder="field_name" required="required">
+                                                <input type="text" name="fields[]" class="form-control"
+                                                       placeholder="field_name" required="required">
                                             </div>
                                         </div>
 
@@ -137,7 +143,8 @@
                                 </div>
                             </div>
 
-                            <p class="text-info text-center">It will automatically assume form fields based on the migration
+                            <p class="text-info text-center">It will automatically assume form fields based on the
+                                migration
                                 field type.</p>
 
                             <div class="text-center">

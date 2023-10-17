@@ -19,7 +19,7 @@ class ProcessController extends Controller
 {
     public function getCRUDify(): View|\Illuminate\Foundation\Application|Factory|Application
     {
-        return view('easy-crud.crud-form');
+        return view('easy-crudify.generator.crud-form');
     }
 
     public function postCRUDify(Request $request): \Illuminate\Http\Response|RedirectResponse
@@ -83,7 +83,7 @@ class ProcessController extends Controller
         try {
             Artisan::call('crud:fire', $commandArg);
 
-            $menus = json_decode(File::get(base_path('resources/easy-crud/menus.json')));
+            $menus = json_decode(File::get(base_path('resources/views/easy-crudify/resources/menus.json')));
 
             $name = $commandArg['name'];
             $routeName = ($commandArg['--route-group']) ? $commandArg['--route-group'] . '/' . Str::snake($name, '-') : Str::snake($name, '-');
@@ -99,7 +99,7 @@ class ProcessController extends Controller
                 return $menu;
             }, $menus->menus);
 
-            File::put(base_path('resources/easy-crud/menus.json'), json_encode($menus));
+            File::put(base_path('resources/views/easy-crudify/resources/menus.json'), json_encode($menus));
 
             Artisan::call('migrate');
             Artisan::call('optimize:clear');

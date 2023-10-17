@@ -70,8 +70,8 @@ class CrudMigrationCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return config('easy-crud.custom_template')
-        ? config('easy-crud.path') . '/migration.stub'
+        return config('easy-crudify.custom_template')
+        ? config('easy-crudify.path') . '/migration.stub'
         : __DIR__ . '/../stubs/migration.stub';
     }
 

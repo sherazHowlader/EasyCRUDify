@@ -1,13 +1,13 @@
-@extends('easy-crud.app')
+@extends('easy-crudify.generator.app')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @include('easy-crud.sidebar')
+            @include('easy-crudify.generator.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit %%modelName%% #{{ $%%crudNameSingular%%->%%primaryKey%% }}</div>
+                    <div class="card-header">Create New %%modelName%%</div>
                     <div class="card-body">
                         <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
@@ -21,14 +21,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($%%crudNameSingular%%, [
-                            'method' => 'PATCH',
-                            'url' => ['/%%routeGroup%%%%viewName%%', $%%crudNameSingular%%->%%primaryKey%%],
-                            'class' => 'form-horizontal',
-                            'files' => true
-                        ]) !!}
+                        {!! Form::open(['url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                        @include ('%%viewTemplateDir%%.form', ['formMode' => 'edit'])
+                        @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])
 
                         {!! Form::close() !!}
 
